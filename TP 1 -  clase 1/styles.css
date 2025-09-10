@@ -23,17 +23,29 @@ body{
     background: var(--color-fondo);
     color: var(--color-texto);
     line-height: 1.6;
+    margin: 0;
 }
 
 /*header*/
 .header{
+    position: sticky;
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 16px 2rem;
     background: var(--color-fondo-alt);
     top: 0;
+    left: 0;
+    transition: all 0.3s ease;
     z-index: 1000;
+}
+.header.shrink {
+    padding: 0.5rem 1.5rem;
+    background: rgba(17, 24, 39, 0.95);
+}
+.header.shrink img {
+    width: 35px;
+    height: 35px;
 }
 
 .header img {
