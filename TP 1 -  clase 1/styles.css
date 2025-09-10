@@ -32,7 +32,6 @@ body{
     justify-content: space-between;
     padding: 16px 2rem;
     background: var(--color-fondo-alt);
-    position: sticky;
     top: 0;
     z-index: 1000;
 }
@@ -70,4 +69,351 @@ body{
 
 .headerNav .navList a:hover{
     color: var(--color-acento)
+}
+
+.hamburguesa {
+    display: none;
+    font-size: 2rem;
+    background: none;
+    border: none;
+    color: var(--color-texto);
+    cursor: pointer;
+}
+
+/*hero*/
+
+.hero{
+    min-height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: linear-gradient(135deg, #0f172a, #1e293b);
+    padding: 2rem;
+}
+
+.tituloHero {
+    font-size: 2.2rem;
+    color: var(--color-acento);
+    margin-bottom: 1rem;
+    animation: fadeDown 1.2s ease forwards;
+}
+
+.hero p{
+    font-size: 1.2rem;
+    color: #cbd5e1;
+}
+
+@keyframes fadeDown {
+    from {
+    opacity: 0;
+    transform: translateY(-30px);
+    }
+    to {
+    opacity: 1;
+    transform: translateY(0);
+    }
+}
+
+/*yo*/
+
+#sobre-mi {
+    padding: 4rem 2rem;
+    background: var(--color-fondo-alt);
+    text-align: center;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.sobreMih2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: var(--color-acento);
+    position: relative;
+    display: inline-block;
+}
+
+.sobreMih2::after {
+    content: "";
+    display: block;
+    width: 50%;
+    height: 3px;
+    background: var(--color-acento);
+    margin: 0.5rem auto 0;
+    border-radius: 2px;
+}
+
+.pSobreMi {
+    font-size: 1.1rem;
+    color: #d1d5db;
+    margin: 1.5rem auto;
+    max-width: 650px;
+    line-height: 1.8;
+}
+
+.olSobreMi {
+    text-align: left;
+    margin: 2rem auto;
+    max-width: 600px;
+    padding-left: 1rem;
+    list-style: none;
+}
+
+.olSobreMi li {
+    margin-bottom: 1rem;
+    padding-left: 2rem;
+    position: relative;
+    font-size: 1rem;
+    color: #e5e7eb;
+}
+
+.olSobreMi li::before {
+    content: "✔";
+    color: var(--color-acento);
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+/*proyectos*/
+
+.proyectos{
+    padding: 4rem 2rem;
+    background: var(--color-fondo-alt);
+    text-align: center;
+}
+
+.proyectos h2{
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    color: var(--color-acento);
+}
+
+.proyectosGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    justify-content: center;
+    align-items: start;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    max-width: 1100px;
+}
+
+.proyectoCard {
+    background: var(--color-fondo);
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
+    transition: var(--transicion);
+    max-width: 350px;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.proyectoCard:hover {
+    transform: translateY(-8px);
+    box-shadow: 0px 8px 25px rgba(0, 0, 0, 0.4);
+}
+
+.titleCard {
+    color: var(--color-acento);
+    margin-bottom: 0.8rem;
+}
+
+.proyectoCard p {
+    margin-bottom: 1rem;
+    font-size: 0.95rem;
+    color: #e2e8f0;
+}
+
+.proyectoCard a{
+    display: inline-block;
+    color: var(--color-acento);
+    font-weight: 500;
+    text-decoration: none;
+    border: 1px solid var(--color-acento);
+    padding: 0.4rem 0.8rem;
+    border-radius: 8px;
+    transition: var(--transicion);
+}
+
+.proyectoCard a:hover {
+    background: var(--color-acento);
+    color: var(--color-fondo);
+}
+
+/*contacto*/
+
+.contacto {
+    padding: 4rem 2rem;
+    background: var(--color-fondo);
+    text-align: center;
+}
+.containerContacto h2 {
+    font-size: 2rem;
+    color: var(--color-acento);
+    margin-bottom: 1rem;
+}
+
+.contactoYo {
+    margin-bottom: 2rem;
+}
+
+.contactoA {
+    color: var(--color-acento);
+    text-decoration: none;
+    transition: var(--transicion);
+}
+
+.contactoA:hover {
+    color: var(--color-acento-hover);
+}
+
+form{
+    max-width: 500px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.divForm{
+    margin-bottom: 1rem;
+}
+
+.labelForm {
+    display: block;
+    margin-bottom: 0.4rem;
+    font-weight: 500;
+}
+
+
+.inputForm,
+select {
+    width: 100%;
+    padding: 0.6rem;
+    border-radius: 6px;
+    border: 1px solid #374151;
+    background: var(--color-fondo-alt);
+    color: var(--color-texto);
+}
+
+.inputForm:focus,
+select:focus {
+    outline: none;
+    border-color: var(--color-acento);
+}
+
+.btn {
+    background: var(--color-acento);
+    color: var(--color-fondo);
+    font-weight: bold;
+    padding: 0.8rem 1.2rem;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: var(--transicion);
+    display: block;
+    margin: 1rem auto 0;
+}
+
+.btn:hover {
+    background: var(--color-acento-hover);
+}
+
+
+/*footer*/
+
+.footer{
+    background: var(--color-fondo-alt);
+    padding: 2rem;
+    text-align: center;
+    border-top: 1px solid #1e293b;
+}
+
+.divFooter h3 {
+    color: var(--color-acento);
+}
+
+.navFooter ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 1.2rem;
+    margin-top: 1rem;
+}
+
+.navFooter a {
+    color: var(--color-texto);
+    text-decoration: none;
+    transition: var(--transicion);
+}
+
+.navFooter a:hover {
+    color: var(--color-acento);
+}
+
+
+/*medias*/
+@media (max-width: 768px) {
+    .header {
+        flex-wrap: wrap;
+        text-align: center;
+        justify-content: space-between;
+    }
+
+    .hamburguesa {
+        display: block;
+    }
+
+    .headerNav {
+        display: none;
+        position: absolute;
+        top: 70px;
+        right: 0;
+        width: 200px;
+        background: var(--color-fondo-alt);
+        border-radius: 8px;
+        box-shadow: 0px 6px 15px rgba(0,0,0,0.5);
+        padding: 1rem;
+    }
+
+    .headerNav.active {
+        display: block;
+    }
+
+    .headerNav .navList {
+        flex-direction: column;
+        gap: 1rem;
+        margin-top: 1rem;
+    }
+
+    .headerNav a {
+        display: block;
+        padding: 0.5rem 0;
+    }
+
+    .tituloHero {
+        font-size: 1.6rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+
+    .proyectosGrid {
+        grid-template-columns: 1fr; 
+        gap: 1.5rem;
+        padding: 0 1rem; 
+        justify-items: center;
+    }
+
+    .proyectoCard {
+        width: 100%;      
+        margin: 0 auto;   
+    }
 }
