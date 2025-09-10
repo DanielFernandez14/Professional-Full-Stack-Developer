@@ -8,17 +8,17 @@
 </head>
 <body>
     <header class="header">    
-        <img src="" alt="">
+        <img src="https://github.com/DanielFernandez14.png" alt="Avatar de GitHub" width="200">
         <div class="contHeader">
             <h1 class="titleh1">
-                Portfilo DanoDev
+                DanoDev
             </h1>
         </div>
-        <nav class="headerNav">
+        <nav class="headerNav" aria-label="Navegacion principal">
             <ul class="navList">
-                <li>Sobre mí</li>
-                <li>Proyectos</li>
-                <li>Contacto</li>
+                <li><a href="#sobre-mi">Sobre mí</a></li>
+                <li><a href="#Proyectos">Proyectos</a></li>
+                <li><a href="#contacto">Contacto</a></li>
             </ul>
         </nav>
     </header>
@@ -28,33 +28,34 @@
             <div class="divHero">
                 <h2 class="tituloHero"> DanoDev Portfolio </h2>
                 <p>Desarrollo web</p>
-                <img src="https://github.com/DanielFernandez14.png" alt="Avatar de GitHub" width="200">
+                
 
             </div>
         </section>
 
 
         <!-- yo -->
-        <section>
+        <section id="sobre-mi">
             <div class="container">
                 <h2 class="sobreMih2"> 
-                    
+                    Sobre mí
                 </h2>
                 <p class="pSobreMi">
+                    Soy Daniel Matías Fernández. 
                     Soy desarrollador web full stack mern. Disfruto crear proyectos propios, desde idealizarlos hasta codificarlos.
                 </p>
 
                 <ol class="olSobreMi">
                     <li>Escribo código legible, escalable y funcional</li>
                     <li>Pienso en la experiencia de usuario primero</li>
-                    <li>Sitios Full Responsive</li>
+                    <li>Sitios Full Responsive | Mobile-first</li>
                 </ol>
             </div>
         </section>
 
 
         <!--proyectos-->
-        <section class="proyectos">
+        <section id="proyectos" class="proyectos">
             <h2>Proyectos</h2>
 
             <ul class="proyectosGrid">
@@ -62,14 +63,14 @@
                     <article class="proyectoCard">
                         <h3 class="titleCard"> Prototipo ACLA </h3>
                         <p>Prototipo pagina web Aeroclub El Calafate</p>
-                        <a href="https://aclaprueba.vercel.app/">Link a vercelDeploy</a>
+                        <a href="https://aclaprueba.vercel.app/" target="_blank">Link a vercelDeploy</a>
                     </article>
                 </li>
                 <li>
                     <article class="proyectoCard">
-                        <h3 class="titleCard"> Prototipo ACLA </h3>
-                        <p>Prototipo pagina web Aeroclub El Calafate</p>
-                        <a href="https://escribania-alz.vercel.app/">Link a vercelDeploy</a>
+                        <h3 class="titleCard"> Prototipo Escribanía </h3>
+                        <p>Prototipo pagina web Escribanía El Calafate</p>
+                        <a href="https://escribania-alz.vercel.app/" target="_blank">Link a vercelDeploy</a>
                     </article>
                 </li>
             </ul>
@@ -77,21 +78,29 @@
 
         <!--contacto-->
 
-        <section>
-            <div>
-
+        <section id="contacto" class="contacto">
+            <div class="containerContacto">
+                <h2>  Contacto  </h2>
             </div>
-            <h2>  Contacto  </h2>
+            
+            <div class="contactoYo">
+                <p class="contactoEmail">Email: <a class="contactoA" href="mailto:danodev@example.com">danodev@gmail.com</a>
+                </p>
+
+                <p class="contactoGithub">GitHub: <a class="contactoA" href="https://github.com/DanielFernandez14" target="_blank" rel="noopener noreferrer">DanielFernandez14</a>
+                </p>
+            </div>
+
 
             <form action="">
-                <div>
-                    <label for="name">Nombre</label>
-                    <input type="text" name="name" id="name">
+                <div class="divForm">
+                    <label class="labelForm" for="name">Nombre</label>
+                    <input class="inputForm" type="text" name="name" id="name">
                 </div>
 
-                <div>
-                    <label for="email">Email</label>
-                    <input type="text" name="email" id="email">
+                <div class="divForm">
+                    <label class="labelForm" for="email">Email</label>
+                    <input class="inputForm" type="email" name="email" id="email">
                 </div>
 
                 <div>
@@ -103,20 +112,25 @@
                         <option value="otros">Otros</option>
                     </select>
                 </div>
-
                 <button class="btn" type="submit">Enviar</button>
-
             </form>
         </section>
-
-
     </main>
 
     
-    <footer>
-        <div>
-            <p>Footer danodev</p>
+    <footer class="footer">
+        <div class="divFooter">
+            <h3>DanoDev</h3>
+            <p>Full Stack Developer MERN</p>
         </div>
+
+        <nav class="navFooter">
+            <ul>
+                <li><a href="#sobre-mi">Sobre mí</a></li>
+                <li><a href="#proyectos">Proyectos</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </nav>
     </footer>
 
 

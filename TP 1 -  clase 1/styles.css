@@ -1,6 +1,334 @@
+:root{
+    --color-fondo: #111827;
+    --color-fondo-main: #0000004f;
+    --color-texto: #f9fafb;
+    --color-acento: #06b6d4;
+    --fuente-base: Roboto, sans-serif;
+    --tam-h1: 1.5rem;
+    --espaciado-gap: 1.5rem;
+}
+
+
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: var(--fuente-base);
 }
 
+
+/*header*/
+
+.header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 2rem;
+    background-color: var(--color-fondo);
+    color: var(--color-texto);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+.header img {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+.contHeader{
+    flex: 1;
+    margin-left: 1rem;
+}
+.titleh1{
+    font-size: var(--tam-h1);
+    margin: 0;
+    font-weight: 700;
+}
+
+.headerNav .navList{
+    list-style: none;
+    display: flex;
+    gap: var(--espaciado-gap);
+    margin: 0;
+    padding: 0;
+}
+.headerNav .navList li a{
+    color: var(--color-texto);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3 ease;
+}
+.headerNav .navList li a:hover{
+    color: var(--color-acento);
+}
+
+@media (max-width: 768px) {
+    .header{
+        flex-wrap: wrap
+    }
+    .contHeader{
+        margin: 0.5rem 0;
+        text-align: center;
+        width: 100%;
+    }
+    .headerNav .navList {
+        justify-content: center;
+        width: 100%;
+        gap: 1rem;
+        flex-wrap: wrap;
+    }
+}
+
+/*main*/
+
+.mainSection{
+    padding: 2rem;
+    background-color: var(--color-fondo-main);
+    color: var(--color-texto);
+    font-family: var(--fuente-base);
+    line-height: 1.6;
+}
+
+.hero{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 4rem 2rem;
+    background: linear-gradient(135deg, var(--color-fondo), var(--color-acento));
+    border-radius: 12px;
+    margin-bottom: 2rem;
+}
+
+.divHero .tituloHero{
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    color: var(--color-texto);
+}
+
+.divHero p{
+    font-size: 1.1rem;
+    color: #d1d1d1;
+}
+
+/*yo*/
+
+.container{
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 2rem;
+    background-color: #1f2937;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0);
+}
+.sobreMih2{
+    font-size: 1.75rem;
+    margin-bottom: 1rem;
+    color: var(--color-acento);
+    text-align: center;
+}
+.pSobreMi{
+    margin-bottom: 1rem;
+    text-align: justify;
+}
+.olSobreMi li{
+    margin-bottom: 0.5rem;
+}
+
+/*proyectos*/
+.proyectos{
+    padding: 3rem 2rem;
+    background-color: #2f5f71;
+    color: var(--color-texto);
+    text-align: center;
+}
+.proyectos h2{
+    font-size: 2rem;
+    color: var(--color-acento);
+    margin-bottom: 2rem;
+}
+
+.proyectosGrid{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.proyectoCard {
+    background-color: #1f2937;
+    border-radius: 12px;
+    padding: 1.5rem;
+    text-align: left;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.9);
+}
+.proyectoCard:hover{
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5)
+}
+
+.titleCard {
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+    color: var(--color-acento)
+}
+
+.proyectoCard p{
+    margin-bottom: 1rem;
+    color: #d1d4db;
+}
+
+.proyectoCard a {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background-color: var(--color-acento);
+    color: #073642; /* contraste oscuro */
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+}
+.proyectoCard a:hover{
+    background-color: #0891b2;;
+}
+
+/*contacto*/
+.contacto{
+    padding: 3rem 2rem;
+    background-color: var(--color-fondo);
+    color: var(--color-texto);
+    text-align: center;
+}
+
+.containerContacto h2{
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    color: var(--color-acento)
+}
+
+.contactoYo {
+    margin: 1.5rem 0;
+}
+
+.contactoEmail,
+.contactoGithub {
+    margin: 0.5rem 0;
+    color: #d1d5db;
+}
+
+.contactoA {
+    color: var(--color-acento);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.contactoA:hover {
+    text-decoration: underline;
+}
+
+
+/*formulario*/
+.contacto form{
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: #1f2937;
+    padding: 2rem;
+    border-radius: 12px;
+}
+.divForm{
+    margin-bottom: 1.25rem;
+}
+.labelForm{
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: var(--color-acento)
+}
+.inputForm,
+.contacto select {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border-radius: 8px;
+    border: 1px solid #374151;
+    background-color: #111827;
+    color: var(--color-texto);
+    font-size: 1rem;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.inputForm:focus,
+.contacto select:focus {
+    border-color: var(--color-acento);
+    box-shadow: 0 0 0 3px rgba(6, 182, 212, 0.4);
+    outline: none;
+}
+
+.btn{
+    display: inline-block;
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: none;
+    border-radius: 8px;
+    background-color:var(--color-acento);
+    font-weight: 700;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0,3 ease, transform 0.2 ease;
+}
+.btn:hover{
+    background-color: #0891b2;
+    transform: translateY(-2px);
+}
+
+/*footer*/
+.footer{
+    background-color: var(--color-fondo);
+    color: var(--color-texto);
+    padding: 2rem;
+    margin-top: 3rem;
+    text-align: center;
+}
+.divFooter{
+    margin-bottom: 1.5rem;
+}
+
+.divFooter h3{
+    font-size: 1.5rem;
+    color: var(--color-acento);
+}
+.divFooter p{
+    font-size: 0.95rem;
+    color: #d1d5db;
+    margin: 0;
+}
+
+.navFooter ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    padding: 0;
+    margin: 0;
+}
+
+.navFooter ul li a {
+    color: var(--color-texto);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.navFooter ul li a:hover {
+    color: var(--color-acento);
+    text-decoration: underline;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    .navFooter ul {
+    flex-direction: column;
+    gap: 1rem;
+    }
+}
