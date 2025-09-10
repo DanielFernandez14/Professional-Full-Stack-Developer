@@ -17,3 +17,57 @@
 html{
     scroll-behavior: smooth;
 }
+
+body{
+    font-family: var(--fuente-base);
+    background: var(--color-fondo);
+    color: var(--color-texto);
+    line-height: 1.6;
+}
+
+/*header*/
+.header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 2rem;
+    background: var(--color-fondo-alt);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.header img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: 2px solid var(--color-acento);
+    transition: var(--transicion);
+}
+.header img:hover{
+    transform: scale(1.1);
+}
+
+.titleh1{
+    font-size: 1.8rem;
+    color: var(--color-acento);
+    font-weight: bold;
+    letter-spacing: 3px;
+}
+
+.headerNav .navList{
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+}
+
+.headerNav .navList a {
+    text-decoration: none;
+    color: var(--color-texto);
+    transition: var(--transicion);
+    font-weight: 500;
+}
+
+.headerNav .navList a:hover{
+    color: var(--color-acento)
+}
