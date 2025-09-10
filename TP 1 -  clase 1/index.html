@@ -3,11 +3,123 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TP 1 - Clase 1</title>
+    <title>TP 1 - Clase 1 Portfolio</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>TP UNO</h1>
+    <header class="header">    
+        <img src="" alt="">
+        <div class="contHeader">
+            <h1 class="titleh1">
+                Portfilo DanoDev
+            </h1>
+        </div>
+        <nav class="headerNav">
+            <ul class="navList">
+                <li>Sobre mí</li>
+                <li>Proyectos</li>
+                <li>Contacto</li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="mainSection">
+        <section class="hero">
+            <div class="divHero">
+                <h2 class="tituloHero"> DanoDev Portfolio </h2>
+                <p>Desarrollo web</p>
+                <img src="https://github.com/DanielFernandez14.png" alt="Avatar de GitHub" width="200">
+
+            </div>
+        </section>
+
+
+        <!-- yo -->
+        <section>
+            <div class="container">
+                <h2 class="sobreMih2"> 
+                    
+                </h2>
+                <p class="pSobreMi">
+                    Soy desarrollador web full stack mern. Disfruto crear proyectos propios, desde idealizarlos hasta codificarlos.
+                </p>
+
+                <ol class="olSobreMi">
+                    <li>Escribo código legible, escalable y funcional</li>
+                    <li>Pienso en la experiencia de usuario primero</li>
+                    <li>Sitios Full Responsive</li>
+                </ol>
+            </div>
+        </section>
+
+
+        <!--proyectos-->
+        <section class="proyectos">
+            <h2>Proyectos</h2>
+
+            <ul class="proyectosGrid">
+                <li>
+                    <article class="proyectoCard">
+                        <h3 class="titleCard"> Prototipo ACLA </h3>
+                        <p>Prototipo pagina web Aeroclub El Calafate</p>
+                        <a href="https://aclaprueba.vercel.app/">Link a vercelDeploy</a>
+                    </article>
+                </li>
+                <li>
+                    <article class="proyectoCard">
+                        <h3 class="titleCard"> Prototipo ACLA </h3>
+                        <p>Prototipo pagina web Aeroclub El Calafate</p>
+                        <a href="https://escribania-alz.vercel.app/">Link a vercelDeploy</a>
+                    </article>
+                </li>
+            </ul>
+        </section>
+
+        <!--contacto-->
+
+        <section>
+            <div>
+
+            </div>
+            <h2>  Contacto  </h2>
+
+            <form action="">
+                <div>
+                    <label for="name">Nombre</label>
+                    <input type="text" name="name" id="name">
+                </div>
+
+                <div>
+                    <label for="email">Email</label>
+                    <input type="text" name="email" id="email">
+                </div>
+
+                <div>
+                    <label for="motivo">Motivo</label>
+                    <select name="motivo" id="motivo">
+                        <option value="" selected disabled>Seleccionar: </option>
+                        <option value="Proyecto">Consulta de proyecto</option>
+                        <option value="Colaboracion">Colaboración</option>
+                        <option value="otros">Otros</option>
+                    </select>
+                </div>
+
+                <button class="btn" type="submit">Enviar</button>
+
+            </form>
+        </section>
+
+
+    </main>
+
+    
+    <footer>
+        <div>
+            <p>Footer danodev</p>
+        </div>
+    </footer>
+
+
 
     <script src="app.js"></script>
 </body>
