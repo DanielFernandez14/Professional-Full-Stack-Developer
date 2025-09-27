@@ -1,0 +1,13 @@
+.btn-Product-Card{
+    margin: 10px;
+    background-color: blue;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+}
+.btn-Product-Card:hover{
+    background-color: darkblue;
+    cursor: pointer;
+    transform: scale(1.5);
+}
