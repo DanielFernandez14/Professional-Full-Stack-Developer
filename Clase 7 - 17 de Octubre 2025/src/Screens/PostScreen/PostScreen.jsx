@@ -1,13 +1,43 @@
-import React from "react";
+import React, { useState } from "react";
 import PostCard from "../../Components/PostCard/PostCard";
 
 const PostScreen = () => {
-  const post_example = {
+    const [post_list, setPostList] = useState([]);
+
+    //Async 
+    //Es la capacidad de delegar tareas bloqueantes para poder continuar la ejecucion del codigo hasta que dicha tarea sea resuelta y cuando esto suceda, poder seguir con ese flujo de codigo.
+    //Viene a resolver un problema -> el bloqueo del hilo principal de ejecucion (main thread) en JS    
+
+
+    //Promise -> es un objeto que JS usa para resolver codigo async 
+    //basicamente tiene un estado interno que marca el estado de la promesa 
+    // dicho estado puede ser: 
+    // pendiente (pending),
+    // cumplida(resolved),
+    // rechazada(Rejected)
+
+    //fetch nos permite hacer consultas HTTP a servidores externos
+    // fetch es async por lo tanto devuelve una promesa
+    // hay que pasarle a fetch la url del recurso al que queremos acceder
+    async function cargarPosts() {
+//await -> le dice a JS que espere a que la promesa se resuelva para continuar con la ejecucion del codigo
+        const respuesta = await fetch("https://jsonplaceholder.typicode.com/posts",
+            {
+                method: "GET"
+            }
+        )
+        const data = await respuesta.json()
+        console.log(data);
+    }
+    cargarPosts();
+
+
+    const post_example = {
     userId: 1,
     id: 1,
     title: "mucho texto para el titulo",
     body: "demasiado texto para el body",
-  };
+    };
 
   // Jsx list
   // const list = [
@@ -48,11 +78,12 @@ const PostScreen = () => {
 
     const lista_post_jsx = post_list_example.map(
         (post) => {
+            console.log('Me ejecuto')
             return (
                 <PostCard
                     title={post.title}
                     body={post.body}
-                    id={post.id}
+                    key={post.id}
                     userId={post.userId}
                 />
         )}
