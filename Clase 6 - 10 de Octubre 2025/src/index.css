@@ -1,0 +1,78 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+ul {
+    display: flex;
+    gap: 30px;
+    list-style: none;   
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+ol{
+    display: flex;
+    gap: 30px;
+    list-style: none;   
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+
+/*---------------------------------------------------------------------------------------00*/
+
+.active_link{
+    background-color: #618dd9;
+    color: white;
+}
+
+/* Contenedor principal de la tarjeta */
+.user-card {
+  background-color: #ffffff; /* Fondo blanco limpio */
+  border-radius: 12px; /* Bordes redondeados modernos */
+  /* Sombra sutil para dar efecto de "elevación" profesional */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  border: 1px solid #f0f0f0; /* Borde muy sutil para definición extra */
+  padding: 24px; /* Espacio interno generoso para que no se vea apretado */
+  max-width: 350px; /* Ancho máximo para que no se estire demasiado */
+  margin: 20px auto; /* Centrado horizontalmente si está sola */
+  /* Fuente moderna y legible (puedes cambiarla si usas otra en tu proyecto) */
+  font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  color: #444; /* Color de texto base gris oscuro, no negro puro */
+}
+
+/* El nombre del usuario (H2) */
+.user_name {
+  font-size: 1.5rem; /* Tamaño destacado */
+  font-weight: 700;
+  color: #222; /* Color más oscuro para el título */
+  margin-top: 0;
+  margin-bottom: 20px; /* Separación con los datos */
+  padding-bottom: 12px;
+  /* Una línea sutil debajo del nombre para separar el encabezado del cuerpo */
+  border-bottom: 2px solid #f0f2f5;
+}
+
+/* Los párrafos de datos */
+.user-card p {
+  margin: 10px 0; /* Espaciado vertical consistente entre filas */
+  line-height: 1.5; /* Altura de línea para mejorar la lectura */
+  font-size: 0.95rem;
+}
+
+/* Las etiquetas en negrita (Email, Age, etc.) */
+.user-card strong {
+  color: #1a1a1a; /* Un poco más oscuro que el valor del texto */
+  font-weight: 600;
+  display: inline-block;
+  min-width: 60px; /* Opcional: alinea los valores si las etiquetas son cortas */
+}
+
+/* (Opcional) Un pequeño toque extra si quieres que el Status o Roles resalten más */
+/* Esto solo aplicará si el texto exacto es "Active" */
+.user-card p:nth-child(5) { /* Apunta al párrafo de Status */
+    color: #059669; /* Un verde profesional */
+    font-weight: 500;
+}
