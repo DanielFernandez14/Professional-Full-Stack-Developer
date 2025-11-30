@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import PostCard from "../../Components/PostCard/PostCard";
 
 const PostScreen = () => {
@@ -25,29 +25,66 @@ const PostScreen = () => {
     // fetch es async por lo tanto devuelve una promesa
     // hay que pasarle a fetch la url del recurso al que queremos acceder
     async function cargarPosts() {
-        //se intenta ejecutar el codigo
-        try{
-            let nombre = ''
-            if(!nombre){
-                // Throw hace que se lance un error al catch mas cercano
-                throw {message: 'El nombre esta vacio'}
-            }
-
-        } catch (error){
-            //si hay un error se ejecuta este bloque
-            console.error('hubo un error, razon: ' + error.message)
-        }
-//await -> le dice a JS que espere a que la promesa se resuelva para continuar con la ejecucion del codigo
+    try {
+        //await -> le dice a JS que espere a que la promesa se resuelva para continuar con la ejecucion del codigo
         const respuesta = await fetch("https://jsonplaceholder.typicode.com/posts",
             {
                 method: "GET"
             }
         )
+        // cargamos la respuesta como json
         const data = await respuesta.json()
         console.log(data);
-    }
-    cargarPosts();
 
+
+    } catch (error) {
+        console.error("Hubo un error al cargar los posts: ", error);
+        setPostListError(error);
+    } finally {
+        setPostListLoading(false);
+    }
+}
+
+
+
+    const [isOpen, setIsOpen] = useState(true);
+    //useState maneja la recarga del componente 
+    //useEffect maneja la recarga de una funcionalidad/función 
+
+    useEffect(
+        //funcionalidad a ejecutar -> el efecto accion a ejecutar
+        () => {
+        console.log("Efecto")
+        },
+    // array de dependencias
+    // Una lista de valores que cuando cambiar harán que se vuelva a ejecutar la funcionalidad, cuándo hacemos que se vuelva a ejecutar
+    //Si el array de dependencias está vacío, la funcionalidad solo se ejecuta una vez, cuando el componente se monta por eso Efecto se imprime una sola vez y Normal se imprime siempre
+    []
+    );
+
+    useEffect(
+        () => {
+            cargarPosts();
+        },
+        []
+    );
+
+    console.log("Normal")
+
+    /*
+    Usar los estados:
+        post_list -> para guardar los datos
+        post_list_loading -> para saber si está cargando
+        post_list_error -> para saber si hubo un error
+    Para renderizar distintos estatus en la pantalla
+    Por ejemplo -> 
+        Si esta cargarndo debe decir cargando
+        Si hay respuesta el map debe mapear la respuesta
+        Si hay error mostrar por alerta el error.message
+    
+    */
+
+    console.log(post_list, post_list_error, post_list_loading);
 
     const post_example = {
     userId: 1,
@@ -93,18 +130,18 @@ const PostScreen = () => {
     },
     ];
 
-    const lista_post_jsx = post_list_example.map(
-        (post) => {
-            console.log('Me ejecuto')
-            return (
-                <PostCard
-                    title={post.title}
-                    body={post.body}
-                    key={post.id}
-                    userId={post.userId}
-                />
-        )}
-    )
+
+
+    const lista_post_jsx = post_list_example.map((post) => (
+    <div key={post.id}>
+        <PostCard
+            title={post.title}
+            body={post.body}
+            userId={post.userId}
+        />
+    </div>
+));
+
 
   // map metodo avanzado de arrays para transformar un array en otro array
   // const nombre = [ 'pepe', 'juan', 'maria' ]
@@ -120,9 +157,23 @@ const PostScreen = () => {
     <div>
         <h1>Posteos</h1>
       {/* Acá llamamos al <PostCard/> */}
+        <button onClick={() => {setIsOpen(!isOpen)}}>{isOpen ? 'Cerrar' : 'Abrir'}</button>
         {lista_post_jsx}
     </div>
     );
 };
 
 export default PostScreen;
+
+
+//se intenta ejecutar el codigo
+        // try{
+        //     let nombre = ''
+        //     if(!nombre){
+        //         // Throw hace que se lance un error al catch mas cercano
+        //         throw {message: 'El nombre esta vacio'}
+        //     }
+        // } catch (error){
+        //     //si hay un error se ejecuta este bloque
+        //     console.error('hubo un error, razon: ' + error.message)
+        // }
