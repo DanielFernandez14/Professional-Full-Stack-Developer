@@ -1,7 +1,9 @@
 import { Routes, Route } from 'react-router-dom';
 import PostScreen from '../../Screens/PostScreen/PostScreen';
+import { getAllProducts } from '../../services/productsService';
 
 function App() {
+        getAllProducts();
     return (
         <div>
             <Routes>
@@ -12,6 +14,8 @@ function App() {
         </div>
     );
 }
+
+    
 
 export default App;
 
