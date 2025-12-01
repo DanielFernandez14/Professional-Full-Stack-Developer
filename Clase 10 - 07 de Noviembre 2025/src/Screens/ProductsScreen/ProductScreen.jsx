@@ -2,6 +2,7 @@ import React, { useReducer } from 'react'
 import { getAllProducts } from '../../services/productsService';
 import { useEffect } from 'react';
 import useRequest from '../../hooks/useRequest';
+import ProductList from '../../Components/ProductList/ProductList';
 
 
 const ProductScreen = () => {
@@ -31,12 +32,22 @@ function loadProducts() {
     )
 
     console.log('Cargando... ', isLoading, 'Respuesta del servidor... ', response, "Error... ", error);
-  
+
 
   return (
     <div>
-      ProdcutsScreens
+      <h1>Catalogo de Productos</h1>
+      {
+        isLoading 
+        ? <span>Cargando...</span>
+        : (
+          error
+          ? <span style={{color: 'red'}}> {error} </span>
+          : <ProductList products={response}/>
+        )
+      }
     </div>
+      
   )
 }
 
