@@ -28,6 +28,7 @@ const contacts = [
     {
         id: 1,
         user_id: 1,
+        author_name: "Pepe",
         user_name: "Pepe",
         profile_pic: "https://img.freepik.com/vector-gratis/icono-personaje-tecnologia-robot-ai_24877-83742.jpg?semt=ais_hybrid&w=740&q=80",
         last_connection: "Hoy 15:34",
@@ -37,6 +38,7 @@ const contacts = [
                 id: 1,
                 content: "Hola, como estas?",
                 author_id: 1,
+                author_name: "Pepe",
                 created_at: "Hoy",
                 status: "visto"
             }
@@ -46,6 +48,7 @@ const contacts = [
     {
         id: 2,
         user_id: 2,
+        author_name: "Josh",
         user_name: "Josh",
         profile_pic: "https://img.freepik.com/vector-gratis/icono-personaje-tecnologia-robot-ai_24877-83742.jpg?semt=ais_hybrid&w=740&q=80",
         last_connection: "Hoy 16:24",
@@ -55,8 +58,9 @@ const contacts = [
                 id: 2,
                 content: "Hola, como estas?",
                 author_id: 2,
+                author_name: "Josh",
                 created_at: "Hoy",
-                status: "visto"
+                status: "Visto"
             }
         ]
     }
